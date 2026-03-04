@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Melao de Elena y Marino</title>
+    <!-- Fuentes de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Color Rosado más oscuro y elegante */
+            --primary-pink: #8D5B5B; 
+            --dark-pink: #5E3030;
+            --white: #ffffff;
+            --text-color: #4a4a4a;
+            --bg-light: #fdfbfb;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Dancing Script', cursive;
+            color: var(--dark-pink);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            position: relative;
+            height: 80vh;
+            background-image: url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-overlay {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 50px;
+            border-radius: 20px;
+            border: 3px solid var(--primary-pink);
+            max-width: 600px;
+            margin: 0 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            margin-bottom: 10px;
+            color: var(--dark-pink);
+            line-height: 1.1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            color: #555;
+        }
+
+        /* --- SECCIÓN MENÚ (IMÁGENES REDONDAS) --- */
+        .menu-section {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: var(--white);
+        }
+
+        .menu-section h2 {
+            font-size: 3rem;
+            margin-bottom: 40px;
+            color: var(--dark-pink);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .menu-item {
+            background: var(--bg-light);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+            border: 1px solid var(--primary-pink);
+            padding: 10px;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.03);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--primary-pink);
+        }
+
+        .menu-item p {
+            padding: 15px;
+            font-weight: bold;
+            color: var(--dark-pink);
+            margin: 0;
+        }
+
+        /* --- SECCIÓN INFORMACIÓN --- */
+        .info-section {
+            padding: 60px 20px;
+            background-color: var(--primary-pink);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .info-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .info-box {
+            flex: 1;
+            min-width: 280px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.4);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .info-box i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+
+        .info-box h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--white);
+        }
+
+        .info-box p {
+            font-size: 1.1rem;
+        }
+
+        /* --- MAPA DE GOOGLE --- */
+        .map-container {
+            width: 100%;
+            max-width: 1000px;
+            height: 400px;
+            margin: 40px auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 4px solid var(--white);
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- FOOTER / BOTÓN WHATSAPP FINAL --- */
+        footer {
+            background-color: #2c2c2c;
+            color: var(--white);
+            text-align: center;
+            padding: 60px 20px;
+            border-top: 5px solid var(--primary-pink);
+        }
+
+        .social-links {
+            margin-bottom: 30px;
+        }
+
+        .social-links a {
+            color: var(--white);
+            font-size: 2rem;
+            margin: 0 15px;
+            transition: color 0.3s;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-pink);
+        }
+
+        .btn-whatsapp-footer {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #25D366;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            margin-top: 20px;
+            border: 2px solid white;
+        }
+
+        .btn-whatsapp-footer:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+            background-color: #20bd5a;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3.5rem; }
+            .menu-grid { grid-template-columns: 1fr; }
+            .info-container { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION: Foto de Bizcocho Real -->
+    <header class="hero">
+        <div class="hero-overlay">
+            <h1>El Melao de Elena y Marino</h1>
+            <p>Amor, confianza y calidad artesanal en cada bocado.</p>
+        </div>
+    </header>
+
+    <!-- SECCIÓN MENÚ: 5 Imágenes Redondas -->
+    <section class="menu-section">
+        <h2>Nuestro Menú</h2>
+        <div class="menu-grid">
+            <!-- Imagen 1 -->
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1588195538326-c5f1f23fa438?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Bizcocho de Chocolate">
+                <p>Bizcocho de Chocolate</p>
+            </div>
+            <!-- Imagen 2 -->
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Bizcocho de Zanahoria">
+                <p>Bizcocho de Zanahoria</p>
+            </div>
+            <!-- Imagen 3 -->
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Bizcocho de Fresa">
+                <p>Bizcocho de Fresa</p>
+            </div>
+            <!-- Imagen 4 -->
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Bizcocho de Vainilla">
+                <p>Bizcocho de Vainilla</p>
+            </div>
+            <!-- Imagen 5 -->
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1627834377411-8da5f4f09de8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Bizcocho Especial">
+                <p>Bizcocho Especial</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN INFORMACIÓN: Horario, Ubicación, Contacto -->
+    <section class="info-section">
+        <div class="info-container">
+            <!-- Horario -->
+            <div class="info-box">
+                <i class="far fa-clock"></i>
+                <h3>Horario de Atención</h3>
+                <p>Lunes a Domingo</p>
+                <p>8:00 a.m. – 8:00 p.m.</p>
+            </div>
+            
+            <!-- Ubicación -->
+            <div class="info-box">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Ubicación</h3>
+                <p>Calle Puente Blanco, No. 22A</p>
+                <p>Los Libertadores, Los Alcarrizos</p>
+            </div>
+
+            <!-- Contacto -->
+            <div class="info-box">
+                <i class="fas fa-phone-alt"></i>
+                <h3>Contáctanos</h3>
+                <p>Teléfono / WhatsApp</p>
+                <p>829-795-0756</p>
+            </div>
+        </div>
+
+        <!-- MAPA DE GOOGLE -->
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3864.666666666666!2d-69.68333333333333!3d18.48333333333333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDI4JzYwLjAiTiA2OcKwNDEnNTkuOSJX!5e0!3m2!1ses!2sdo!4v1620000000000!5m2!1ses!2sdo" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <!-- FOOTER: Redes Sociales y Botón WhatsApp -->
+    <footer>
+        <h3>Síguenos en Redes</h3>
+        <div class="social-links">
+            <a href="https://instagram.com/elmelaodeelena" target="_blank" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/BizcochoElena" target="_blank" title="Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+        </div>
+        
+        <!-- Botón de WhatsApp al final -->
+        <a href="https://wa.me/18297950756?text=Hola,%20quisiera%20hacer%20un%20pedido%20de%20bizcocho" class="btn-whatsapp-footer" target="_blank">
+            <i class="fab fa-whatsapp"></i> Haz tu pedido ahora y escríbenos directamente por WhatsApp
+        </a>
+        
+        <p style="margin-top: 20px; font-size: 0.9rem;">© 2024 El Melao de Elena y Marino. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
